@@ -1,0 +1,657 @@
+.landing-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  overflow-x: hidden;
+}
+
+.nav-header {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 1.2rem 2rem;
+  margin: 1rem 2rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 1rem;
+  z-index: 1000;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a237e;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1a237e;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.nav-links span:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dashboard-section {
+  padding: 1rem 2rem;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  color: #1a237e;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.stat-card h2 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  color: #1a237e;
+}
+
+.trend-up {
+  color: #00897b;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 2rem;
+}
+
+.chart-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+}
+
+.chart-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+  border-radius: 1rem;
+  pointer-events: none;
+}
+
+.chart-card h3 {
+  color: #1a237e;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.map-section {
+  padding: 0 2rem 2rem;
+}
+
+.map-section > div {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Enhanced 3D effects for charts */
+.recharts-line {
+  filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.2));
+}
+
+.recharts-pie {
+  filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.15));
+}
+
+.recharts-default-legend {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px !important;
+}
+
+.recharts-legend-item-text {
+  color: #1a237e !important;
+  font-weight: 500 !important;
+}
+
+.recharts-cartesian-axis-line {
+  filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.1));
+}
+
+.recharts-cartesian-grid-horizontal line {
+  stroke: rgba(26, 35, 126, 0.1);
+}
+
+/* Remove hover transform from pie sectors */
+.recharts-pie-sector:hover {
+  transform: none;
+}
+
+/* Add these new styles */
+.pie-chart-container {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+}
+
+.pie-chart-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+  border-radius: 1rem;
+  pointer-events: none;
+}
+
+.recharts-pie-sector:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+
+.recharts-legend-item {
+  transition: transform 0.2s ease;
+}
+
+.recharts-legend-item:hover {
+  transform: translateX(5px);
+}
+
+.chart-section {
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.chart-section h3 {
+  color: #1a237e;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #1a237e;
+  font-size: 1.1rem;
+}
+
+.error-message {
+  color: #d32f2f;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.1rem;
+}
+
+/* Enhanced chart styles */
+.recharts-default-legend {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px !important;
+}
+
+.recharts-legend-item-text {
+  color: #1a237e !important;
+  font-weight: 500 !important;
+}
+
+.recharts-cartesian-axis-line {
+  filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.1));
+}
+
+.recharts-cartesian-grid-horizontal line {
+  stroke: rgba(26, 35, 126, 0.1);
+}
+
+/* Add styles for bar chart */
+.recharts-bar-rectangle {
+  transition: opacity 0.3s ease;
+}
+
+.recharts-bar-rectangle:hover {
+  opacity: 0.8;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.category-select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #E0E0E0;
+  background: white;
+  color: #1a237e;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.category-select:hover {
+  border-color: #1a237e;
+}
+
+.category-select:focus {
+  border-color: #1a237e;
+  box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.1);
+}
+
+/* Update the metrics dashboard styles */
+.metrics-dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  margin: 20px;
+  background: transparent;
+}
+
+.metric-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+}
+
+.metric-icon {
+  font-size: 24px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #f8f9fa;
+}
+
+.metric-content {
+  flex: 1;
+}
+
+.metric-card h3 {
+  color: #6c757d;
+  font-size: 14px;
+  margin: 0 0 5px 0;
+  font-weight: 500;
+}
+
+.metric-value {
+  font-size: 24px;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 5px;
+}
+
+.trend {
+  font-size: 13px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.trend.positive {
+  color: #198754;
+  background-color: #d1e7dd;
+}
+
+.trend.negative {
+  color: #dc3545;
+  background-color: #f8d7da;
+}
+
+/* Specific background colors for each metric icon */
+.metric-icon.customers {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.metric-icon.revenue {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.metric-icon.profit {
+  background-color: #fce4ec;
+  color: #c2185b;
+}
+
+.metric-icon.invoices {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.category-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.category-selector button {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-selector button.active {
+  background: #007bff;
+  color: white;
+  border-color: #0056b3;
+}
+
+.category-selector button:hover {
+  background: #f8f9fa;
+}
+
+.category-selector button.active:hover {
+  background: #0056b3;
+}
+
+.recommendations-section {
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem;
+}
+
+.recommendations-section h3 {
+  color: #1a237e;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.recommendation-card {
+  position: relative;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem 1.25rem 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 1rem;
+}
+
+.recommendation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation-card:hover .store-badge {
+  background: #2196f3;
+}
+
+.recommendation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.recommendation-header h4 {
+  color: #1a237e;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.price {
+  color: #2196f3;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.offers-container {
+  background: #fff;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.best-offer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.offer-label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.offer-value {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.min-purchase {
+  color: #666;
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.user-input-container {
+  margin-bottom: 2rem;
+}
+
+.user-form {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  max-width: 400px;
+  margin-top: 1rem;
+}
+
+.input-group {
+  flex: 1;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #1a237e;
+  font-size: 0.9rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+}
+
+.fetch-button {
+  padding: 0.75rem 1.5rem;
+  background: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.fetch-button:hover {
+  background: #1976d2;
+  transform: translateY(-2px);
+}
+
+.fetch-button:active {
+  transform: translateY(0);
+}
+
+.recommendation-subtitle {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.store-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a237e;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recommendations-grid {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.email-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.email-button {
+  padding: 0.75rem 1.5rem;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  min-width: 250px;
+}
+
+.email-button:hover:not(:disabled) {
+  background: #43A047;
+  transform: translateY(-2px);
+}
+
+.email-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.email-button.sending {
+  background: #FFA726;
+}
+
+.email-button.sent {
+  background: #66BB6A;
+}
+
+.success-message {
+  color: #43A047;
+  font-size: 0.9rem;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
